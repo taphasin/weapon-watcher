@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    # REMOVE or comment out this line:
+    # volumes:
+    #   - ./frontend:/app:cached
+    depends_on:
+      - backend
+
+  ai-flask:
+    build: ./ai-flask
+    ports:
+      - "6001:6000"
+
+volumes:
+  node_modules:

@@ -1,0 +1,6 @@
+flask
+flask-cors
+passlib[bcrypt]
+pyjwt
+requests
+bcrypt==4.0.1
