@@ -12,8 +12,7 @@ services:
     build: ./frontend
     ports:
       - "80:5173"
-    # REMOVE or comment out this line:
-    # volumes:
+    #volumes:
     #   - ./frontend:/app:cached
     depends_on:
       - backend
